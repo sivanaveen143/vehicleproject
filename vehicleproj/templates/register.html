@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="{% static 'UI/main.css' %}" />
+<h2>{{msg}}</h2>
+<style>
+   input[name="phn"]{
+    width:200px;
+   }
+</style>
+<center>  
+    <h3>{{error}}</h3>
+<form method=post action='registrationvalidation' id="reg">
+    {% csrf_token %}
+    <h1 style="font-size:24px;color:violet;">Register</h1><br><br>
+    username : <input type="text" name="uname" placeholder="enter username" minlength="7" maxlength="15" length="50" required/><br><br><br>
+    password : <input type="text" name="pswd" placeholder="set password" length="50" minlength="7" maxlength="15" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" required/><br><br><br>
+    mobile no: <input type="text" name="phn" placeholder="mobile number" length="50"  maxlength="10" pattern="[6-9]{1}[0-9]{9}" required/><br><br><br>
+    email id : <input type="email" name="email" placeholder="enter email id" length="50" required/><br><br>
+    <input type="text" name="lat" id="lat" value="NA" style="font-size:px;background-color:;border:0px" readonly /><br>
+    <input type="text" name="lon" id="lon" value="NA" style="font-size:px;background-color:;border:0px" readonly /><br>
+    <select name="role" id="role">
+        <option>customer</option>
+        <option>mechanic</option>
+    </select><br><br>
+    <p style="text-indent:200px;"><input type="submit" name="Register"/></p>
+
+</form>
+</center>
+
+<script src="{% static 'javascript/location.js' %}"></script>
