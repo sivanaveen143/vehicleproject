@@ -1,1 +1,0 @@
-web: gunicorn vehicleproj.wsgi --log-file-
