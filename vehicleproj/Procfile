@@ -1,1 +1,1 @@
-web: gunicorn vehicleproj.wsgi
+web gunicorn vehicleproj.wsgi
